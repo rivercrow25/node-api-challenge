@@ -7,9 +7,10 @@ server.use(express.json())
 server.use(helmet())
 
 const projectRouter = require('./api/projectsRouter')
+const actionsRouter = require('./api/actionsRouter')
 
 server.use('/api/projects', projectRouter)
 
-server.get('/actions')
+server.use('/api/actions', actionsRouter)
 
 module.exports = server
